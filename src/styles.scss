@@ -8,7 +8,7 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-@import '~@angular/material/theming';
+@import '@angular/material/theming';
 
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -45,7 +45,7 @@ $dark-theme: mat.define-dark-theme((
 @include mat.all-component-themes($light-theme);
 
 .dark-theme {
-  @include mat.all-component-themes($dark-theme)
+  @include mat.all-component-colors($dark-theme)
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -53,17 +53,3 @@ $dark-theme: mat.define-dark-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/*
-.mat-drawer-container{
-    background-color: black;
-}
-*/
-
-.main-toolbar{
-  @include mat-elevation(8);
-  position: relative;
-}
-
-.mat-toolbar{
-  @include mat-elevation(8);
-}
