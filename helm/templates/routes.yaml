@@ -1,0 +1,22 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: production-frontend-ingress-route
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - kind: Rule
+    match: Host(`{{ .Values.global.domain }}`)
+    priority: 20
+    services:
+    - name: frontend
+      port: 80
+  {{ if .Values.global.tls.secretName }}
+  tls:
+    secretName: {{ .Values.global.tls.secretName | default "tls-secret" }}
+    domains:
+    - main: {{ .Values.global.domain }}
+  {{ end }}
+

@@ -1,0 +1,6 @@
+global:
+  tls:
+    secretName : ""
+  domain: root.local
+  ingress:
+    ip: 10.152.183.208
