@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeServie } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'root_frontend';
-isDarkMode: any = true;
+
+  constructor(public themeService : ThemeServie){
+
+  }
 }

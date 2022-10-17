@@ -11,6 +11,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatSlideToggleModule,
     FormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
