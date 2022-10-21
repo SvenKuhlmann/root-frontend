@@ -1,6 +1,5 @@
 apiVersion: v2
-name: production_frontend
+name: root-frontend
 type: application
-version: 0.0.0
+version: 0.0.1-SNAPSHOT
 appVersion: 0.0.1-SNAPSHOT
-
