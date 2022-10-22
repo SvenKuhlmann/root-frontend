@@ -1,0 +1,24 @@
+{
+  "project": {
+    "projects": [
+      {
+        "id": 1,
+        "name": "Rock Paper Scissor",
+        "description": "The popular game!",
+        "links": [
+          {"label": "Play", "href": "rock-paper-scissor.local" },
+          {"label": "Browse Sources", "href": "https://github/SvenKuhlmann" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Other Project",
+        "description": "Boring business application.",
+        "links": [
+          {"label": "Subscribe", "href": "rock-paper-scissor.local" },
+          {"label": "Browse Sources", "href": "https://github/SvenKuhlmann" }
+        ]
+      }
+    ]
+  }
+}

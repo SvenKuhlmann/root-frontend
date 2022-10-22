@@ -4,14 +4,20 @@
     <mat-slide-toggle (toggleChange)="themeService.toggleTheme()"> </mat-slide-toggle>
 </mat-toolbar>
 
-<div fxLayout="column" fxLayoutAlign="space-around center" style="width: 100%; height: 100%">
-    <div fxLayout="row" fxLayoutAlign="space-around center" style="width: 100%; height: 100%">
-        <mat-card style="width: 30%;">
-            <mat-card-title> Rock Paper Scissor </mat-card-title>
+<div fxLayout="column" fxLayoutAlign="space-around center" style="height : 100%">
+    <div fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%; height: 35%">
+        <mat-card *ngFor="let project of projects?.projects" fxFlex="1 1 30%" fxLayout="column">
+            <mat-card-title> {{project.name}} </mat-card-title>
             <mat-card-subtitle> Game </mat-card-subtitle>
+            <mat-card-content fxFlex="1 1 auto">
+                <div> some </div>
+                <div> some </div>
+                <div> some </div>
+            </mat-card-content>
             <mat-card-actions>
-                <button mat-button>Play</button>
-                <button mat-button>Browse Sources</button>
+                <a *ngFor="let link of project.links" mat-button [href]="link.href">
+                    {{ link.label }}
+                </a>
             </mat-card-actions>
         </mat-card>
     </div>

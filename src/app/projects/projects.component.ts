@@ -6,6 +6,7 @@ import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-to
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProjectListResponse, ProjectService } from './project.service';
 
 @Component({
   selector: 'app-projects',
@@ -15,11 +16,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  
+  projects?: ProjectListResponse
 
-  constructor(public themeService: ThemeServie) { }
+  constructor(public themeService: ThemeServie, private prjectService: ProjectService) { }
 
   ngOnInit(): void {
-
+    this.prjectService.getProjects().subscribe(projects => this.setup(projects))
+  }
+  setup(projects: ProjectListResponse): void {
+    this.projects = projects
+    console.log("projects", this.projects)
   }
 
 }
