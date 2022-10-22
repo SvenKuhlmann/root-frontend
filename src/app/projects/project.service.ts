@@ -6,26 +6,36 @@ import { Observable } from "rxjs";
 @Injectable({
     providedIn: 'root',
 })
-export class ProjectService{
+export class ProjectService {
 
-    constructor(private http : HttpClient){}
+    constructor(private http: HttpClient) { }
 
-    public getProjects() : Observable<ProjectListResponse>{
+    getProjects(): Observable<ProjectListResponse> {
         return this.http.get<ProjectListResponse>("/api/project")
     }
-    
+
+    add(): Observable<any> {
+        return this.http.post("/api/project", {});
+    }
+
+    put(project: Project): Observable<any> {
+        return this.http.put("/api/project/" + project?.id, project);
+    }
+
 }
 
-export interface ProjectListResponse{
+export interface ProjectListResponse {
     projects: Project[]
 }
 
-export interface Project{
-    name: string;
-    links: DomainLink[];
+export interface Project {
+    name?: string;
+    description?: string;
+    links?: DomainLink[];
+    id?: string;
 }
 
-export interface DomainLink{
+export interface DomainLink {
     label: string;
     href: string;
 }

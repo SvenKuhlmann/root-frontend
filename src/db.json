@@ -4,7 +4,7 @@
       {
         "id": 1,
         "name": "Rock Paper Scissor",
-        "description": "The popular game!",
+        "description": "The popular game! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "links": [
           {"label": "Play", "href": "rock-paper-scissor.local" },
           {"label": "Browse Sources", "href": "https://github/SvenKuhlmann" }
