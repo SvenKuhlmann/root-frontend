@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "testroot.local",
+      "secure": false
+    }
+  }

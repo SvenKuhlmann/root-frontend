@@ -1,0 +1,19 @@
+global:
+  tls:
+    secretName : ""
+  domain: testroot.local
+  ingress:
+    ip: 10.152.183.208
+frontend:
+  enabled: false
+backend:
+  enabled: true
+  logging:
+    level:
+      root: debug
+  database:
+    enabled: false
+game:
+  enabled: false
+  game: 
+    domain: rock-paper-scissor
