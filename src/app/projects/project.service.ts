@@ -15,7 +15,7 @@ export class ProjectService {
     }
 
     add(): Observable<any> {
-        return this.http.post("/api/project", {});
+        return this.http.post("/api/project", {name: "name"});
     }
 
     put(project: Project): Observable<any> {
