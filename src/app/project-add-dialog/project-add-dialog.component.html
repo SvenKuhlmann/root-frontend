@@ -1,0 +1,26 @@
+<h1 mat-dialog-title> Create Project </h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label> Title </mat-label>
+        <input matInput type="text" [(ngModel)]="project.name">
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label> Description </mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <div *ngFor="let link of project.links">
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label> Label </mat-label>
+            <input matInput type="text" [(ngModel)]="link.label">
+        </mat-form-field>  
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label> Url </mat-label>
+            <input matInput type="text" [(ngModel)]="link.href">
+        </mat-form-field>
+    </div>
+    <button (click)="addLink()"> Add Link </button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</div>

@@ -8,42 +8,17 @@
 <div fxLayout="column" fxLayoutAlign="space-around center" style="height : 100%">
     <div  fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%">
         <mat-card *ngFor="let project of projects?.projects" fxFlex="1 1 30%" fxLayout="column">
-            <mat-card-title *ngIf="!(editProject == project)"> {{project.name}} </mat-card-title>
-            <mat-form-field *ngIf="(editProject == project)" appearance="fill">
-                <mat-label> Title </mat-label>
-                <input matInput type="text" [(ngModel)]="project.name">
-            </mat-form-field>
-
-            <mat-card-content *ngIf="!(editProject == project)">
+            <mat-card-title> {{project.name}} </mat-card-title>
+            <mat-card-content >
                 {{project.description}}
             </mat-card-content>
-            <mat-form-field *ngIf="(editProject == project)" appearance="fill">
-                <mat-label> Description </mat-label>
-                <textarea matInput [(ngModel)]="project.description"></textarea>
-            </mat-form-field>
-
             <span fxFlex="1 1 auto"></span>
-            <mat-card-actions *ngIf="!(editProject == project)">
+            <mat-card-actions>
                 <a *ngFor="let link of project.links" mat-button [href]="link.href">
                     {{ link.label }}
                 </a>
             </mat-card-actions>
-            <cdk-virtual-scroll-viewport *ngIf="(editProject == project)" itemSize="40"
-                style="  height: 200px; width: 100%; border: 1px solid black;">
-                <div *cdkVirtualFor="let link of project.links" fxLayout="column">
-                    <mat-form-field appearance="fill">
-                        <mat-label> Label </mat-label>
-                        <input matInput type="text" [(ngModel)]="link.label">
-                    </mat-form-field>
-                    <mat-form-field appearance="fill">
-                        <mat-label> Url </mat-label>
-                        <input matInput type="text" [(ngModel)]="link.href">
-                    </mat-form-field>
-                </div>
-            </cdk-virtual-scroll-viewport>
-
-            <button mat-button *ngIf="!(editProject == project)" (click)="setEditProject(project)"> Edit </button>
-            <button mat-button *ngIf="(editProject == project)" (click)="send()"> Update </button>
+            <button mat-button(click)="setEditProject(project)"> Edit </button>
         </mat-card>
     </div>
 </div>
