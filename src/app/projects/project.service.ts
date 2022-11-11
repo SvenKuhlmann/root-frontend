@@ -7,21 +7,22 @@ import { Observable } from "rxjs";
     providedIn: 'root',
 })
 export class ProjectService {
-
+    
     constructor(private http: HttpClient) { }
 
     getProjects(): Observable<ProjectListResponse> {
         return this.http.get<ProjectListResponse>("/api/project")
     }
 
-    add(): Observable<any> {
-        return this.http.post("/api/project", {name: "name"});
+    post(project: Project): Observable<any> {
+        return this.http.post("/api/project", project);
     }
 
     put(project: Project): Observable<any> {
         return this.http.put("/api/project/" + project?.id, project);
     }
 
+  
 }
 
 export interface ProjectListResponse {

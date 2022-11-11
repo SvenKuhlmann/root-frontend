@@ -6,21 +6,25 @@
     </mat-form-field>
     <mat-form-field appearance="fill" style="width: 100%;">
         <mat-label> Description </mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput [(ngModel)]="project.description"></textarea>
     </mat-form-field>
+    <h2> Links </h2>
     <div *ngFor="let link of project.links">
-        <mat-form-field appearance="fill" style="width: 100%;">
-            <mat-label> Label </mat-label>
-            <input matInput type="text" [(ngModel)]="link.label">
-        </mat-form-field>  
-        <mat-form-field appearance="fill" style="width: 100%;">
-            <mat-label> Url </mat-label>
-            <input matInput type="text" [(ngModel)]="link.href">
-        </mat-form-field>
+        <mat-card style="margin-bottom: 2em;">
+            <mat-card-content>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label> Label </mat-label>
+                    <input matInput type="text" [(ngModel)]="link.label">
+                </mat-form-field>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label> Url </mat-label>
+                    <input matInput type="text" [(ngModel)]="link.href">
+                </mat-form-field>
+            </mat-card-content>
+        </mat-card>
     </div>
-    <button (click)="addLink()"> Add Link </button>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+    <button mat-button mat-dialog-close (click)="post()">Create</button>
+    <button mat-button (click)="addLink()"> Add Link </button>
 </div>

@@ -21,11 +21,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 })
 export class ProjectsComponent implements OnInit {
 
-
-
-
   projects?: ProjectListResponse
-  editProject?: Project;
 
   constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog) { }
 
@@ -39,11 +35,6 @@ export class ProjectsComponent implements OnInit {
   add() {
     let dialogRef = this.dialog.open(ProjectAddDialogComponent);
   }
-  send() {
-    this.projectService.put(this.editProject!).subscribe();
-    this.editProject = undefined;
-  }
-  setEditProject(project: Project) {
-    this.editProject = project;
-  }
+
+
 }
