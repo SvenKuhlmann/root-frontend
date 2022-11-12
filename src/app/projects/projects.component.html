@@ -8,7 +8,16 @@
 <div fxLayout="column" fxLayoutAlign="space-around center" style="height : 100%">
     <div  fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%">
         <mat-card *ngFor="let project of projects?.projects" fxFlex="1 1 30%" fxLayout="column">
-            <mat-card-title> {{project.name}} </mat-card-title>
+            <div fxLayout="row">
+                <mat-card-title> {{project.name}} </mat-card-title>
+                <div fxFlex></div>
+                <button mat-raised-button (click)="edit(project)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-raised-button (click)="delete(project)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
             <mat-card-content >
                 {{project.description}}
             </mat-card-content>
@@ -18,6 +27,7 @@
                     {{ link.label }}
                 </a>
             </mat-card-actions>
+
         </mat-card>
     </div>
 </div>

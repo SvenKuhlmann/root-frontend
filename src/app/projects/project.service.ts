@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 })
 export class ProjectService {
     
+    
     constructor(private http: HttpClient) { }
 
     getProjects(): Observable<ProjectListResponse> {
@@ -22,6 +23,9 @@ export class ProjectService {
         return this.http.put("/api/project/" + project?.id, project);
     }
 
+    delete(project: Project) : Observable<any> {
+        return this.http.delete("/api/project/" + project?.id);
+    }
   
 }
 
