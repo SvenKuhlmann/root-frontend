@@ -14,6 +14,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon'; 
 import { ProjectEditDialogComponent } from '../project-edit-dialog/project-edit-dialog.component';
 import { ProjectDeleteDialogComponent } from '../project-delete-dialog/project-delete-dialog.component';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-projects',
@@ -26,11 +27,13 @@ export class ProjectsComponent implements OnInit {
 
 
   projects?: ProjectListResponse
+  name?: string;
 
-  constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog) { }
+  constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog, public oauthService : OAuthService) { }
 
   ngOnInit(): void {
     this.load()
+
   }
   load(){
     this.projectService.getProjects().subscribe(projects => this.setup(projects))
@@ -51,6 +54,11 @@ export class ProjectsComponent implements OnInit {
     let dialogRef = this.dialog.open(ProjectDeleteDialogComponent,{data: project});
     dialogRef.afterClosed().subscribe(() => this.load())
   }
-    
+  login(){
+    this.oauthService.initLoginFlow();
+  }
+  logoff(){
+    this.oauthService.logOut()
+  }
 
 }

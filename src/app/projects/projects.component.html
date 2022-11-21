@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
     <h1> Projects </h1>
+    <h1> {{name}} </h1>
     <button mat-button (click)="add()"> Add </button>
     <span style="flex: 1 1 auto;"></span>
+    <button mat-raised-button (click)="login()"> Login </button>
+    <button mat-raised-button (click)="logoff()"> LogOff </button>
     <mat-slide-toggle (toggleChange)="themeService.toggleTheme()"> </mat-slide-toggle>
 </mat-toolbar>
 

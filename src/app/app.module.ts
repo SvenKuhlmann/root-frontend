@@ -13,21 +13,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthConfig, OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 
-export const authConfig: AuthConfig = {
 
-  issuer: 'http://dataenv.de',
-
-  redirectUri: window.location.origin + '/index.html',
-
-  clientId: 'spa',
-
-  scope: 'openid profile email offline_access api',
-
-  responseType: 'code'
-}
 
 
 @NgModule({
@@ -50,7 +39,7 @@ export const authConfig: AuthConfig = {
     OAuthModule.forRoot({
       resourceServer: {
         sendAccessToken: true,
-        allowedUrls: ['http://www.angular.at/api/']
+        allowedUrls: ['https://dataenv.de']
       }
     }),
   ],

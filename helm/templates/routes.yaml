@@ -8,7 +8,7 @@ spec:
     - websecure
   routes:
   - kind: Rule
-    match: Host(`{{ .Values.global.domain }}`) && !PathPrefix(`/api`)
+    match: Host(`{{ .Values.global.domain }}`) && !PathPrefix(`/api`, `/admin`, `/js`, `/resources`, `/realms`, `/robots.txt`, `/auth`, `/actuator`)
     priority: 20
     services:
     - name: frontend
