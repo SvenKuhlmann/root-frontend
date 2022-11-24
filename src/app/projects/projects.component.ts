@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ProjectEditDialogComponent } from '../project-edit-dialog/project-edit-dialog.component';
 import { ProjectDeleteDialogComponent } from '../project-delete-dialog/project-delete-dialog.component';
 import { OAuthService } from 'angular-oauth2-oidc';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-projects',
@@ -28,8 +29,11 @@ export class ProjectsComponent implements OnInit {
 
   projects?: ProjectListResponse
   name?: string;
+  scopes?: String[]
+  editPermission = false;
+  claims?: Record<string, any>;
 
-  constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog, public oauthService : OAuthService) { }
+  constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog, public oauthService : OAuthService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.load()
@@ -40,7 +44,9 @@ export class ProjectsComponent implements OnInit {
   }
   setup(projects: ProjectListResponse): void {
     this.projects = projects
-    console.log("projects", this.projects)
+    this.authService.loginEvent.then(() => {this.scopes = <String[]>this.oauthService.getGrantedScopes()});
+    //this.oauthService.loadDiscoveryDocumentAndTryLogin().then(() => console.log(this.oauthService.getGrantedScopes()))
+
   }
   add() {
     let dialogRef = this.dialog.open(ProjectAddDialogComponent);
