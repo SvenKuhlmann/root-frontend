@@ -39,7 +39,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     OAuthModule.forRoot({
       resourceServer: {
         sendAccessToken: true,
-        allowedUrls: ['https://dataenv.de']
+        allowedUrls: ['https://dataenv.de', 'http://localhost:8080', 'http://localhost:4200']
       }
     }),
   ],
