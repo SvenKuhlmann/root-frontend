@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { MatIconModule } from '@angular/material/icon';
+import {LayoutModule} from '@angular/cdk/layout'; 
 
 
 
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
+    LayoutModule,
     MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
