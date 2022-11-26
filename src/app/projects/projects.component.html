@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
     <h1> Projects </h1>
     <h1> {{name}} </h1>
-    <button mat-button (click)="add()"> Add </button>
     <span style="flex: 1 1 auto;"></span>
-    <button mat-raised-button (click)="login()"> Login </button>
-    <button mat-raised-button (click)="logoff()"> LogOff </button>
-    <mat-slide-toggle (toggleChange)="themeService.toggleTheme()"> </mat-slide-toggle>
+    <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
+    <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
+    <button *ngIf="themeService.theme != 'light-theme'" mat-raised-button (click)="themeService.setTheme('light-theme');"> Light Mode </button>
+    <button *ngIf="themeService.theme != 'dark-theme'" mat-raised-button (click)="themeService.setTheme('dark-theme');"> Dark Mode </button>
 </mat-toolbar>
 
 <div fxLayout="column" fxLayoutAlign="space-around center" style="height : 100%">
@@ -32,5 +32,6 @@
             </mat-card-actions>
 
         </mat-card>
+        <button mat-raised-button (click)="add()"> Add Project </button>
     </div>
 </div>

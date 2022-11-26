@@ -23,11 +23,15 @@ export class ProjectService {
     }
 
     put(project: Project): Observable<any> {
-        return this.http.put("/api/project/" + project?.id, project);
+        var headers = new HttpHeaders().set('Authorization', `Bearer ${this.oauthService.getAccessToken()}`);
+        var options = { headers: headers }
+        return this.http.put("/api/project/" + project?.id, project, options);
     }
 
     delete(project: Project): Observable<any> {
-        return this.http.delete("/api/project/" + project?.id);
+        var headers = new HttpHeaders().set('Authorization', `Bearer ${this.oauthService.getAccessToken()}`);
+        var options = { headers: headers }
+        return this.http.delete("/api/project/" + project?.id, options);
     }
 
 }
