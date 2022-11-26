@@ -1,37 +1,21 @@
-<mat-toolbar color="primary">
-    <h1> Projects </h1>
-    <h1> {{name}} </h1>
-    <span style="flex: 1 1 auto;"></span>
-    <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
-    <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
-    <button *ngIf="themeService.theme != 'light-theme'" mat-raised-button (click)="themeService.setTheme('light-theme');"> Light Mode </button>
-    <button *ngIf="themeService.theme != 'dark-theme'" mat-raised-button (click)="themeService.setTheme('dark-theme');"> Dark Mode </button>
-</mat-toolbar>
-
-<div fxLayout="column" fxLayoutAlign="space-around center" style="height : 100%">
-    <div fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%">
-        <mat-card *ngFor="let project of projects?.projects" fxFlex="1 1 30%" fxLayout="column">
-            <div fxLayout="row">
-                <mat-card-title> {{project.name}} </mat-card-title>
-                <div fxFlex></div>
-                <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="edit(project)">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="delete(project)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </div>
-            <mat-card-content>
-                {{project.description}}
-            </mat-card-content>
-            <span fxFlex="1 1 auto"></span>
-            <mat-card-actions>
-                <a *ngFor="let link of project.links" mat-button [href]="link.href">
-                    {{ link.label }}
-                </a>
-            </mat-card-actions>
-
-        </mat-card>
-        <button mat-raised-button (click)="add()"> Add Project </button>
+<mat-card *ngFor="let project of projects?.projects" style="margin: 1em" fxLayout="column">
+    <div fxLayout="row">
+        <mat-card-title> {{project.name}} </mat-card-title>
+        <div fxFlex="1 1 auto"></div>
+        <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="edit(project)">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="delete(project)">
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
-</div>
+    <mat-card-content>
+        {{project.description}}
+    </mat-card-content>
+    <span fxFlex="1 1 auto"></span>
+    <mat-card-actions>
+        <a *ngFor="let link of project.links" mat-button [href]="link.href">
+            {{ link.label }}
+        </a>
+    </mat-card-actions>
+</mat-card>

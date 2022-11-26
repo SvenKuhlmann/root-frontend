@@ -28,7 +28,6 @@ export class ProjectsComponent implements OnInit {
 
 
   projects?: ProjectListResponse
-  name?: string;
   scopes?: String[]
   editPermission = false;
   claims?: Record<string, any>;
@@ -45,8 +44,6 @@ export class ProjectsComponent implements OnInit {
   setup(projects: ProjectListResponse): void {
     this.projects = projects
     this.authService.loginEvent.then(() => {this.scopes = <String[]>this.oauthService.getGrantedScopes()});
-    //this.oauthService.loadDiscoveryDocumentAndTryLogin().then(() => console.log(this.oauthService.getGrantedScopes()))
-
   }
   add() {
     let dialogRef = this.dialog.open(ProjectAddDialogComponent);
@@ -60,11 +57,6 @@ export class ProjectsComponent implements OnInit {
     let dialogRef = this.dialog.open(ProjectDeleteDialogComponent,{data: project});
     dialogRef.afterClosed().subscribe(() => this.load())
   }
-  login(){
-    this.oauthService.initLoginFlow();
-  }
-  logoff(){
-    this.oauthService.logOut()
-  }
+
 
 }

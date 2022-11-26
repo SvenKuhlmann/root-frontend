@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -25,6 +26,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
