@@ -13,7 +13,8 @@ import { ThemeServie } from './theme.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  sidenavOpened = false;
+
+  sidenavOpened?: boolean;
   scopes?: String[];
   resizeObservable$?: Observable<Event>
   resizeSubscription$?: Subscription
@@ -37,9 +38,17 @@ export class AppComponent implements OnInit {
     console.log("with ", this.width)
     this.isNavBarOpenByDefault = this.width > 1200;
     console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
-
   }
-
+  toggleSidenav() {
+    console.log("togled ", this.sidenavOpened, "default", this.isNavBarOpenByDefault)
+    
+    if (this.sidenavOpened == undefined) {
+      this.sidenavOpened = !this.isNavBarOpenByDefault;
+    } else {
+      this.sidenavOpened = !this.sidenavOpened;
+    }
+    console.log("togled ", this.sidenavOpened, "default", this.isNavBarOpenByDefault)
+  }
   login() {
     this.oauthService.initLoginFlow();
   }

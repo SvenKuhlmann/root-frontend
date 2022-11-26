@@ -1,6 +1,6 @@
 <div [ngClass]="themeService.theme" style="height: 100%;">
     <mat-sidenav-container style="height: 100%;">
-        <mat-sidenav [opened]="isNavBarOpenByDefault" disableClose="true" mode="side">
+        <mat-sidenav [opened]="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened" disableClose="true" mode="side">
             <mat-nav-list>
                 <mat-list-item [routerLink]="'/'"> Home </mat-list-item>
                 <mat-list-item [routerLink]="'projects'"> Projects </mat-list-item>
@@ -10,10 +10,9 @@
         </mat-sidenav>
         <mat-sidenav-content>
             <mat-toolbar color="primary">
-                <button mat-raised-button (click)="sidenavOpened = !sidenavOpened" class="tool-bar-button">
+                <button mat-raised-button (click)="toggleSidenav()" class="tool-bar-button">
                     <mat-icon>menu</mat-icon>
                 </button>
-                <h1> Projects </h1>
                 <span style="flex: 1 1 auto;"></span>
                 <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
                 <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
