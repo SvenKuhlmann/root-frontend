@@ -3,7 +3,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { AuthService } from './auth.service';
-import { ThemeServie } from './theme.service';
 
 
 
@@ -14,6 +13,7 @@ import { ThemeServie } from './theme.service';
 })
 export class AppComponent implements OnInit {
 
+
   sidenavOpened?: boolean;
   scopes?: String[];
   resizeObservable$?: Observable<Event>
@@ -21,9 +21,13 @@ export class AppComponent implements OnInit {
   height?: number;
   width?: number;
   isNavBarOpenByDefault?: boolean;
+  themes: Theme[] = [{ name: "dark-theme", label: "Dark Mode" }, { name: "light-theme", label: "Light Mode" }];
+  activeTheme = this.themes[0]
+  isFullToolbarShown?: boolean;
 
 
-  constructor(public themeService: ThemeServie, private authService: AuthService, private oauthService: OAuthService) {
+
+  constructor(private authService: AuthService, private oauthService: OAuthService) {
 
   }
   ngOnInit(): void {
@@ -37,11 +41,11 @@ export class AppComponent implements OnInit {
     this.width = window.innerWidth;
     console.log("with ", this.width)
     this.isNavBarOpenByDefault = this.width > 1200;
+    this.isFullToolbarShown = this.width > 600;
     console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
   }
   toggleSidenav() {
     console.log("togled ", this.sidenavOpened, "default", this.isNavBarOpenByDefault)
-    
     if (this.sidenavOpened == undefined) {
       this.sidenavOpened = !this.isNavBarOpenByDefault;
     } else {
@@ -59,6 +63,14 @@ export class AppComponent implements OnInit {
     this.resizeSubscription$?.unsubscribe()
   }
 
+  nextTheme(): Theme {
+    var nextTheme = this.themes[this.themes.indexOf(this.activeTheme) +1]
+    return nextTheme == undefined ? this.themes[0] : nextTheme;
+  }
+}
+
+export interface Theme {
+  name: string, label: string
 }
 
 

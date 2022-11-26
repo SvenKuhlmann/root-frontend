@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ThemeServie } from '../theme.service';
 import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,7 +31,7 @@ export class ProjectsComponent implements OnInit {
   editPermission = false;
   claims?: Record<string, any>;
 
-  constructor(public themeService: ThemeServie, private projectService: ProjectService, public dialog: MatDialog, public oauthService : OAuthService, public authService: AuthService) { }
+  constructor( private projectService: ProjectService, public dialog: MatDialog, public oauthService : OAuthService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.load()

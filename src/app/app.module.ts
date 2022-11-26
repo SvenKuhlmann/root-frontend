@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { MatIconModule } from '@angular/material/icon';
 import {LayoutModule} from '@angular/cdk/layout'; 
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 
@@ -27,6 +28,7 @@ import {LayoutModule} from '@angular/cdk/layout';
   ],
   imports: [
     BrowserModule,
+    MatMenuModule,
     LayoutModule,
     MatIconModule,
     AppRoutingModule,

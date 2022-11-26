@@ -1,6 +1,7 @@
-<div [ngClass]="themeService.theme" style="height: 100%;">
+<div [ngClass]="activeTheme.name" style="height: 100%;">
     <mat-sidenav-container style="height: 100%;">
-        <mat-sidenav [opened]="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened" disableClose="true" mode="side">
+        <mat-sidenav [opened]="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened" disableClose="true"
+            mode="side">
             <mat-nav-list>
                 <mat-list-item [routerLink]="'/'"> Home </mat-list-item>
                 <mat-list-item [routerLink]="'projects'"> Projects </mat-list-item>
@@ -11,13 +12,26 @@
         <mat-sidenav-content>
             <mat-toolbar color="primary">
                 <button mat-raised-button (click)="toggleSidenav()" class="tool-bar-button">
-                    <mat-icon>menu</mat-icon>
+                    <mat-icon *ngIf="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened"> arrow_back_ios
+                    </mat-icon>
+                    <mat-icon *ngIf="!(sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened)"> menu
+                    </mat-icon>
                 </button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
-                <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
-                <button *ngIf="themeService.theme != 'light-theme'" mat-raised-button (click)="themeService.setTheme('light-theme');" class="tool-bar-button"> Light Mode </button>
-                <button *ngIf="themeService.theme != 'dark-theme'" mat-raised-button (click)="themeService.setTheme('dark-theme');" class="tool-bar-button"> Dark Mode </button>
+                <div *ngIf="isFullToolbarShown">
+                    <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
+                    <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
+                    <button mat-raised-button (click)="activeTheme = nextTheme()" class="tool-bar-button">
+                        {{nextTheme().label}} </button>
+                </div>
+                <button *ngIf="!isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="activeTheme = nextTheme()"> {{nextTheme().label}} </button>
+                    <button *ngIf="!scopes" mat-menu-item (click)="login()"> Login </button>
+                    <button *ngIf="scopes" mat-menu-item (click)="logoff()"> LogOut </button>
+                </mat-menu>
             </mat-toolbar>
             <router-outlet></router-outlet>
         </mat-sidenav-content>
