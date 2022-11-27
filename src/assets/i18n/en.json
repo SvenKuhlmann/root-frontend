@@ -2,5 +2,11 @@
     "welcome": "Welcome",
     "welcome-paragraph": "Welcome to my personal web site.",
     "welcome-purpose-paragraph": "This web application is used to present ongoing projects and hosted applications.",
-    "home-projects-paragraph": "Project "
+    "home-projects-paragraph": "Visit the project section to see ongoing projects.",
+    "github-reference-sentence": "The sources of the projects can be found on",
+
+    "projects": "Projects",
+
+    "applications": "Applications",
+    "home-applications-paragraph": "The Applications section shows further services which are hosted under this address. "
 }

@@ -1,5 +1,23 @@
-<div style="margin: 3em;">
+<div style="margin: 1em;">
     <h1> {{'welcome' | translate}} </h1>
     <p> {{'welcome-paragraph' | translate}} {{'welcome-purpose-paragraph' | translate}} </p>
-    
 </div>
+
+<mat-card style="margin: 1em">
+    <mat-card-title [routerLink]="['/projects']" mat-ripple class="clickable">
+        {{'projects' | translate}}
+    </mat-card-title>
+    <mat-card-content>
+        {{'home-projects-paragraph' | translate}}
+        {{'github-reference-sentence' | translate}} <a href="https://github.com/SvenKuhlmann"
+            style="color: currentcolor"> GitHub</a>.
+    </mat-card-content>
+</mat-card>
+<mat-card style="margin: 1em">
+    <mat-card-title [routerLink]="['/applications']" mat-ripple class="clickable">
+        {{'applications' | translate}}
+    </mat-card-title>
+    <mat-card-content>
+        {{'home-applications-paragraph' | translate}}
+    </mat-card-content>
+</mat-card>

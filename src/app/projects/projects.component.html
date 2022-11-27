@@ -1,25 +1,17 @@
-<mat-card *ngFor="let project of projects?.projects" style="margin: 1em" fxLayout="column">
-    <div fxLayout="row">
-        <mat-card-title> {{project.name}} </mat-card-title>
-        <div fxFlex="1 1 auto"></div>
-        <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="edit(project)">
-            <mat-icon>edit</mat-icon>
-        </button>
-        <button *ngIf="scopes?.includes('root-project-edit')" mat-raised-button (click)="delete(project)">
-            <mat-icon>delete</mat-icon>
-        </button>
-    </div>
-    <mat-card-content>
-        {{project.description}}
-    </mat-card-content>
-    <span fxFlex="1 1 auto"></span>
-    <mat-card-actions>
-        <a *ngFor="let link of project.links" mat-button [href]="link.href">
-            {{ link.label }}
-        </a>
-    </mat-card-actions>
+<h1 style="margin: 1em"> {{'projects' | translate }} </h1>
+<mat-card style="margin: 1em">
+  <mat-card-title> Rock Paper Scissor </mat-card-title>  
+  <mat-card-content> Rock Paper Scissor is a web application which lets you play the beloved game.</mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button href="https://rock-paper-scissor.dataenv.de/match"> Play Now </a>
+    <a mat-raised-button href="https://github.com/SvenKuhlmann/rps"> Browse Sources </a>
+  </mat-card-actions>
 </mat-card>
 
-<div fxLayout="column" fxLayoutAlign="space-around center" style="margin: 2em;">
-    <button mat-raised-button (click)="add()"> Add Project </button>
-</div>
+<mat-card style="margin: 1em">
+  <mat-card-title> Root Project</mat-card-title>  
+  <mat-card-content> The Root Project is the application which is currently displayed.  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button href="https://github.com/SvenKuhlmann" disabled> Browse Sources </a>
+  </mat-card-actions>
+</mat-card>

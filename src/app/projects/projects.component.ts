@@ -15,11 +15,12 @@ import { ProjectEditDialogComponent } from '../project-edit-dialog/project-edit-
 import { ProjectDeleteDialogComponent } from '../project-delete-dialog/project-delete-dialog.component';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { AuthService } from '../auth.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatSlideToggleModule, MatCardModule, MatButtonModule, FlexLayoutModule, MatListModule, ScrollingModule, MatDialogModule, MatIconModule],
+  imports: [CommonModule, MatToolbarModule, MatSlideToggleModule, MatCardModule, MatButtonModule, FlexLayoutModule, MatListModule, ScrollingModule, MatDialogModule, MatIconModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
