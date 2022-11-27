@@ -19,10 +19,11 @@
                 </button>
                 <span style="flex: 1 1 auto;"></span>
                 <button *ngIf="isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="languageMenu" class="tool-bar-button">
-                    <mat-icon>flag</mat-icon>
+                    {{languages.get(translate.currentLang)}}
+                    <mat-icon>expand_more</mat-icon>
                 </button>
                 <mat-menu #languageMenu="matMenu">
-                    <button mat-menu-item *ngFor="let language of translate.getLangs()" (click)="translate.use(language)"> {{language}} </button>
+                    <button mat-menu-item *ngFor="let language of this.languages.keys()" (click)="translate.use(language)"> {{this.languages.get(language)}} </button>
                 </mat-menu>
                 <div *ngIf="isFullToolbarShown">
                     <button *ngIf="!scopes" mat-raised-button (click)="login()" class="tool-bar-button"> Login </button>

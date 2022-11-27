@@ -24,12 +24,21 @@ throw new Error('Method not implemented.');
   themes: Theme[] = [{ name: "dark-theme", label: "Dark Mode" }, { name: "light-theme", label: "Light Mode" }];
   activeTheme = this.themes[0]
   isFullToolbarShown?: boolean;
+  languages: Map<string, string> = new Map([
+    ['en', 'English'],
+    ['de', 'German'],
+  ]);
 
   constructor(private authService: AuthService, private oauthService: OAuthService, public translate: TranslateService) {
     translate.addLangs(["en", "de"])
     translate.setDefaultLang("en")
   }
   ngOnInit(): void {
+    for(let language of this.languages.keys()){
+      if(navigator.language.startsWith(language)){
+        this.translate.use(language)
+      }
+    }
     this.setScreenSize()
     this.resizeObservable$ = fromEvent(window, 'resize')
     this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => { this.setScreenSize() })
