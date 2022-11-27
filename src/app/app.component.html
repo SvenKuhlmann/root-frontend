@@ -18,16 +18,22 @@
                     </mat-icon>
                 </button>
                 <span style="flex: 1 1 auto;"></span>
+                <button *ngIf="isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="languageMenu" class="tool-bar-button">
+                    <mat-icon>flag</mat-icon>
+                </button>
+                <mat-menu #languageMenu="matMenu">
+                    <button mat-menu-item *ngFor="let language of translate.getLangs()" (click)="translate.use(language)"> {{language}} </button>
+                </mat-menu>
                 <div *ngIf="isFullToolbarShown">
-                    <button *ngIf="!scopes" mat-raised-button (click)="login()"> Login </button>
-                    <button *ngIf="scopes" mat-raised-button (click)="logoff()"> LogOut </button>
+                    <button *ngIf="!scopes" mat-raised-button (click)="login()" class="tool-bar-button"> Login </button>
+                    <button *ngIf="scopes" mat-raised-button (click)="logoff()" class="tool-bar-button"> LogOut </button>
                     <button mat-raised-button (click)="activeTheme = nextTheme()" class="tool-bar-button">
                         {{nextTheme().label}} </button>
                 </div>
-                <button *ngIf="!isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="menu">
+                <button *ngIf="!isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="themeMenu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
-                <mat-menu #menu="matMenu">
+                <mat-menu #themeMenu="matMenu">
                     <button mat-menu-item (click)="activeTheme = nextTheme()"> {{nextTheme().label}} </button>
                     <button *ngIf="!scopes" mat-menu-item (click)="login()"> Login </button>
                     <button *ngIf="scopes" mat-menu-item (click)="logoff()"> LogOut </button>

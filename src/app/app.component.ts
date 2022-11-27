@@ -1,10 +1,8 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { AuthService } from './auth.service';
-
-
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+switchLang(arg0: string) {
+throw new Error('Method not implemented.');
+}
 
   sidenavOpened?: boolean;
   scopes?: String[];
@@ -25,10 +25,9 @@ export class AppComponent implements OnInit {
   activeTheme = this.themes[0]
   isFullToolbarShown?: boolean;
 
-
-
-  constructor(private authService: AuthService, private oauthService: OAuthService) {
-
+  constructor(private authService: AuthService, private oauthService: OAuthService, public translate: TranslateService) {
+    translate.addLangs(["en", "de"])
+    translate.setDefaultLang("en")
   }
   ngOnInit(): void {
     this.setScreenSize()
@@ -62,9 +61,8 @@ export class AppComponent implements OnInit {
   ngOnDestroy() {
     this.resizeSubscription$?.unsubscribe()
   }
-
   nextTheme(): Theme {
-    var nextTheme = this.themes[this.themes.indexOf(this.activeTheme) +1]
+    var nextTheme = this.themes[this.themes.indexOf(this.activeTheme) + 1]
     return nextTheme == undefined ? this.themes[0] : nextTheme;
   }
 }

@@ -12,12 +12,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { MatIconModule } from '@angular/material/icon';
-import {LayoutModule} from '@angular/cdk/layout'; 
-import {MatMenuModule} from '@angular/material/menu'; 
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatMenuModule } from '@angular/material/menu';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {MatSelectModule} from '@angular/material/select'; 
 
 
 
@@ -28,6 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
     MatMenuModule,
     LayoutModule,
     MatIconModule,
@@ -42,6 +45,7 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     MatListModule,
     HttpClientModule,
+    TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: httpTranslateLoader, deps: [HttpClient]}}),
     OAuthModule.forRoot({
       resourceServer: {
         sendAccessToken: true,
@@ -53,3 +57,7 @@ import {MatMenuModule} from '@angular/material/menu';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
