@@ -30,10 +30,13 @@
                     <button mat-raised-button (click)="activeTheme = nextTheme()" class="tool-bar-button">
                         {{nextTheme().label}} </button>
                 </div>
-                <button *ngIf="!isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="themeMenu">
+                <button *ngIf="!isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="miniMenu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
-                <mat-menu #themeMenu="matMenu">
+                <mat-menu #miniMenu="matMenu">
+                    <button mat-menu-item [matMenuTriggerFor]="languageMenu">
+                        Language
+                    </button>
                     <button mat-menu-item (click)="activeTheme = nextTheme()"> {{nextTheme().label}} </button>
                     <button *ngIf="!scopes" mat-menu-item (click)="login()"> Login </button>
                     <button *ngIf="scopes" mat-menu-item (click)="logoff()"> LogOut </button>
