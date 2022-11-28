@@ -6,5 +6,9 @@
 
     "projects": "Projekte",
 
-    "applications": "Anwendungen"
+    "applications": "Anwendungen",
+    "profile": "Profil",
+    "contact": "Kontakt",
+
+    "ts-client-download": "Client Herunterladen"
 }

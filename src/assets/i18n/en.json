@@ -1,12 +1,26 @@
 {
     "welcome": "Welcome",
-    "welcome-paragraph": "Welcome to my personal web site.",
-    "welcome-purpose-paragraph": "This web application is used to present ongoing projects and hosted applications.",
+    "welcome-paragraph": "Welcome to my personal web site. My name is Sven Kuhlmann. I am a professional Software Developer, Kubernetes Cluster Administrator and System Architect.",
+    "welcome-purpose-paragraph": "This web site is used to present myself and the projects I am working on. Further this is the landing page for those who like to use one of the various services I am hosting.",
+    "welcome-profile-section": "If you want to learn more about me, my skills and experience in the field of Software Craftsmanship, you should visit the", 
+    "welcome-contact": "If you want to discuss a job opportunity, present a project or pitch an idea please use the ", 
+    "contact-form": "Contact Form",
+    
+    "welcome-what-to-do": "If you want to learn more about me visit the profile section. If you want to gain access to one of the services that require a login contact me.",
     "home-projects-paragraph": "Visit the project section to see ongoing projects.",
     "github-reference-sentence": "The sources of the projects can be found on",
 
     "projects": "Projects",
 
     "applications": "Applications",
-    "home-applications-paragraph": "The Applications section shows further services which are hosted under this address. "
+    "home-applications-paragraph": "The Applications section shows further services which are hosted under this address.",
+    "profile": "Profile",
+    "contact": "Contact",
+
+    "ts-client-download": "Download Client",
+    "profile-abstract": "I am a Software Developer specialized in Web Applications with multiple years professional experience building java backends. I am convinced that a good developer must have a decent understanding of all technologies that play a part in the system he is working upon. Thus I am constantly improving my skill set around all technologies involved in modern web application development. My skills include therefore frontend development with the angular framework as well as cluster orchestration with Kubernetes and helm. When ever possible I practice TDD. I like to solve difficult problems wether they derive from the domain or the technical requirements.",
+    "free-bob-cite": "Code is written once but read a hundred times.",
+    "free-bob-cite-mark": "freely cited from Robert C. Martin",
+    "technologies": "Technologies",
+    "profile-technologies": "" 
 }

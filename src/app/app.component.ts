@@ -10,9 +10,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-switchLang(arg0: string) {
-throw new Error('Method not implemented.');
-}
+
 
   sidenavOpened?: boolean;
   scopes?: String[];
@@ -34,8 +32,8 @@ throw new Error('Method not implemented.');
     translate.setDefaultLang("en")
   }
   ngOnInit(): void {
-    for(let language of this.languages.keys()){
-      if(navigator.language.startsWith(language)){
+    for (let language of this.languages.keys()) {
+      if (navigator.language.startsWith(language)) {
         this.translate.use(language)
       }
     }
@@ -53,13 +51,11 @@ throw new Error('Method not implemented.');
     console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
   }
   toggleSidenav() {
-    console.log("togled ", this.sidenavOpened, "default", this.isNavBarOpenByDefault)
     if (this.sidenavOpened == undefined) {
       this.sidenavOpened = !this.isNavBarOpenByDefault;
     } else {
       this.sidenavOpened = !this.sidenavOpened;
     }
-    console.log("togled ", this.sidenavOpened, "default", this.isNavBarOpenByDefault)
   }
   login() {
     this.oauthService.initLoginFlow();

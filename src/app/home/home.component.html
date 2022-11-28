@@ -1,9 +1,20 @@
-<div style="margin: 1em;">
+<div style="margin: 1em">
     <h1> {{'welcome' | translate}} </h1>
+    <a [routerLink]="['/profile']">
+        <img src="/assets/shup.jpg" style="height: 10em; width: 10em; float: right; margin-bottom: 1em;">
+    </a>
     <p> {{'welcome-paragraph' | translate}} {{'welcome-purpose-paragraph' | translate}} </p>
+    <p> {{'welcome-profile-section' | translate}} <a style="color: currentColor" [routerLink]="['/profile']"> Profile
+            Section</a>.
+            {{'welcome-contact' | translate}} 
+        <a style="color: currentColor" [routerLink]="['/profile']"> 
+            {{'contact-form' | translate}}
+        </a>.
+    <p> 
+    </p>
 </div>
 
-<mat-card style="margin: 1em">
+<mat-card style="margin: 1em; clear:right">
     <mat-card-title [routerLink]="['/projects']" mat-ripple class="clickable">
         {{'projects' | translate}}
     </mat-card-title>
