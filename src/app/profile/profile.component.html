@@ -10,8 +10,21 @@
         {{'profile-production-tech' | translate}}
     </p>
     <h2>{{ 'cv' | translate }}</h2>
-    <div fxLayout="row" fxLayoutAlign="center" style="width: 100%;">
-        <div fxLayout="column" fxLayoutAlign="space-around end" style=" margin-right: 2em;">
+    <div class="cv-header" style="width: 100%" fxLayout="row" fxLayoutAlign="end center">
+        <div style="width: 15%;">2018 - 2020 </div>
+    </div>
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-header" style="width: 30%; text-align: right;" fxLayout="row" fxLayoutAlign="end center">2018 - 2020</div>
+        <div class="cv-header" style="width: 68%;" fxLayout="row" fxLayoutAlign="start center"> Master of Science: {{
+            "computer-science" |
+            translate}} </div>
+    </div>
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div style="width: 30%;" fxLayout="row" fxLayoutAlign="end"> {{"university" | translate}} </div>
+        <div style="width: 68%;" fxLayout="row" fxLayoutAlign="start"> {{ "uni-paderborn" | translate}} </div>
+    </div>
+    <div fxLayout="row" style="width: 100%">
+        <div fxLayout="column" fxLayoutAlign="space-around end" style="margin-right: 1em; width: 50%;">
             <div class="cv-header"> 2022 - {{"today" | translate}} </div>
             <div> {{"employer" | translate}} </div>
             <div class="cv-header"> 2020 - 2022 </div>
@@ -19,7 +32,7 @@
             <div class="cv-header"> 2018 - 2020 </div>
             <div> {{"university" | translate}} </div>
         </div>
-        <div fxLayout="column" fxLayoutAlign="space-around start">
+        <div fxLayout="column">
             <div class="cv-header"> {{ "software-developer" | translate}} </div>
             <div> Ceyoniq Technology GmbH</div>
             <div class="cv-header"> {{ "software-developer" | translate}} </div>
