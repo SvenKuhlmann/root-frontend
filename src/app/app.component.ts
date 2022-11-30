@@ -47,15 +47,9 @@ export class AppComponent implements OnInit {
     this.width = window.innerWidth;
     console.log("with ", this.width)
     this.isNavBarOpenByDefault = this.width > 1200;
+    this.sidenavOpened = this.isNavBarOpenByDefault;
     this.isFullToolbarShown = this.width > 600;
     console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
-  }
-  toggleSidenav() {
-    if (this.sidenavOpened == undefined) {
-      this.sidenavOpened = !this.isNavBarOpenByDefault;
-    } else {
-      this.sidenavOpened = !this.sidenavOpened;
-    }
   }
   login() {
     this.oauthService.initLoginFlow();

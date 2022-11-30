@@ -1,4 +1,4 @@
-<div style="margin: 1em" fxLayout="column" fxLayoutAlign="space-around center" >
+<div style="margin: 1em" fxLayout="column" fxLayoutAlign="space-around center">
     <h1> Sven Kuhlmann </h1>
     <h3> Master of Science </h3>
     <img src="/assets/shup.jpg" style="width: 60%; min-width: 10em; max-width: 25em; margin-bottom: 1em; margin: 1em;">
@@ -9,13 +9,60 @@
         {{'profile-frontend-tech' | translate}}
         {{'profile-production-tech' | translate}}
     </p>
-</div>
-<div style="margin: 1em; clear:right">
+    <h2>{{ 'cv' | translate }}</h2>
+    <div fxLayout="row" fxLayoutAlign="center" style="width: 100%;">
+        <div fxLayout="column" fxLayoutAlign="space-around end" style=" margin-right: 2em;">
+            <div class="cv-header"> 2022 - {{"today" | translate}} </div>
+            <div> {{"employer" | translate}} </div>
+            <div class="cv-header"> 2020 - 2022 </div>
+            <div> {{"employer" | translate}} </div>
+            <div class="cv-header"> 2018 - 2020 </div>
+            <div> {{"university" | translate}} </div>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="space-around start">
+            <div class="cv-header"> {{ "software-developer" | translate}} </div>
+            <div> Ceyoniq Technology GmbH</div>
+            <div class="cv-header"> {{ "software-developer" | translate}} </div>
+            <div> 4ALLPORTAL GmbH</div>
+            <div class="cv-header"> Master of Science: {{ "computer-science" | translate}} </div>
+            <div> {{ "uni-paderborn" | translate}} </div>
+        </div>
+    </div>
+
+    <h2> Technologies </h2>
+    This section contains a non-exhaustive list of technologies I use frequently and enjoy working with.
+    <h3> Spring Cosmos </h3>
+    <div fxLayout="column" fxLayoutAlign="space-around start">
+        <div>Boot</div>
+        <div>Web</div>
+        <div>Security</div>
+        <div>Data Jpa</div>
+        <div>Boot Test</div>
+        <div></div>
+    </div>
+    <h3> Build-Systems </h3>
+    <div> Gradle </div>
+    <div> Maven </div>
+
+    <h3> DevOps </h3>
+    <div> GitLab </div>
+
+    <h3> Production </h3>
+    <div> Kubernetes </div>
+    <div> Helm </div>
+
+    <h3> Testing </h3>
+    <div> Junit </div>
+    <div> SprigBootTest </div>
+    <div> Mockito </div>
+    <div> Hamcrest </div>
+
     <h2> Philosophy </h2>
-    <div fxLayout="column" fxLayoutAlign="space-around center"> "{{"free-bob-cite" | translate}}" </div>
+    <div> "{{"free-bob-cite" | translate}}" </div>
     <div style="font-size: 0.8em" fxLayout="column" fxLayoutAlign="space-around center"> {{"free-bob-cite-mark" |
         translate}} </div>
 </div>
+
 <!--div style="margin: 1em; clear:right">
 
     It is worth putting an effort in reducing the workload for fellow developers.

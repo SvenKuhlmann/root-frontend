@@ -1,7 +1,6 @@
 <div [ngClass]="activeTheme.name" style="height: 100%;">
     <mat-sidenav-container style="height: 100%;">
-        <mat-sidenav [opened]="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened" disableClose="true"
-            mode="side">
+        <mat-sidenav [opened]="sidenavOpened" disableClose="true" mode="side" style="width: 9em">
             <mat-nav-list>
                 <mat-list-item [routerLink]="'/'"> Home </mat-list-item>
                 <mat-list-item [routerLink]="'projects'"> {{"projects" | translate}} </mat-list-item>
@@ -12,23 +11,26 @@
         </mat-sidenav>
         <mat-sidenav-content>
             <mat-toolbar color="primary">
-                <button mat-raised-button (click)="toggleSidenav()" class="tool-bar-button">
-                    <mat-icon *ngIf="sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened"> arrow_back_ios
+                <button mat-raised-button (click)="sidenavOpened = !sidenavOpened" class="tool-bar-button">
+                    <mat-icon *ngIf="sidenavOpened"> arrow_back_ios
                     </mat-icon>
-                    <mat-icon *ngIf="!(sidenavOpened == undefined ? isNavBarOpenByDefault : sidenavOpened)"> menu
+                    <mat-icon *ngIf="!sidenavOpened"> menu
                     </mat-icon>
                 </button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="languageMenu" class="tool-bar-button">
+                <button *ngIf="isFullToolbarShown" mat-raised-button [matMenuTriggerFor]="languageMenu"
+                    class="tool-bar-button">
                     {{languages.get(translate.currentLang)}}
                     <mat-icon>expand_more</mat-icon>
                 </button>
                 <mat-menu #languageMenu="matMenu">
-                    <button mat-menu-item *ngFor="let language of this.languages.keys()" (click)="translate.use(language)"> {{this.languages.get(language)}} </button>
+                    <button mat-menu-item *ngFor="let language of this.languages.keys()"
+                        (click)="translate.use(language)"> {{this.languages.get(language)}} </button>
                 </mat-menu>
                 <div *ngIf="isFullToolbarShown">
                     <button *ngIf="!scopes" mat-raised-button (click)="login()" class="tool-bar-button"> Login </button>
-                    <button *ngIf="scopes" mat-raised-button (click)="logoff()" class="tool-bar-button"> LogOut </button>
+                    <button *ngIf="scopes" mat-raised-button (click)="logoff()" class="tool-bar-button"> LogOut
+                    </button>
                     <button mat-raised-button (click)="activeTheme = nextTheme()" class="tool-bar-button">
                         {{nextTheme().label}} </button>
                 </div>

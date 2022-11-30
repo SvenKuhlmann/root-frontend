@@ -10,5 +10,10 @@
     "profile": "Profil",
     "contact": "Kontakt",
 
-    "ts-client-download": "Client Herunterladen"
+    "ts-client-download": "Client Herunterladen",
+    "cv": "Lebenslauf",
+    "computer-science": "Informatik",
+    "education": "Studium",
+    "software-developer": "Softwareentwickler",
+    "today": "Heute"
 }

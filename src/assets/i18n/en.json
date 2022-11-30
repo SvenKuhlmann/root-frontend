@@ -18,11 +18,20 @@
     "profile-private-motivation": "The web applications I build rely on state of the art technologies.",
     "profile-backend-tech": "Commonly I use the Spring libraries to build fast, secure and easily testable backends.",
     "profile-frontend-tech": "While the Angular Framework is used by me to build reactive Frontends which I optimize for desktops and mobile.",
-    "profile-production-tech": "My applications are hosted in Kubernetes Clusters for which I rely on helm to manage the complexity of the yml files.",
+    "profile-production-tech": "My applications are hosted in Kubernetes Clusters for which I rely on helm to manage complexity.",
     "profile-oauth": "",
     "profile-con": " I am convinced that a good developer must have a decent understanding of all technologies that play a part in the system he is working upon. Thus I am constantly improving my skill set around all technologies involved in modern web application development. My skills include therefore frontend development with the angular framework as well as cluster orchestration with Kubernetes and helm. When ever possible I practice TDD. I like to solve difficult problems wether they derive from the domain or the technical requirements.",
     "free-bob-cite": "Code is written once but read a hundred times.",
     "free-bob-cite-mark": "freely cited from Robert C. Martin",
     "technologies": "Technologies",
-    "profile-technologies": ""
+    "profile-technologies": "",
+    "cv": "Curriculum Vitae",
+    "computer-science": "Computer Science",
+    "education": "Education",
+    "university": "University",
+    "uni-paderborn": "Paderborn University",
+    "professional-experience": "Professional Experience",
+    "employer": "Employer",
+    "software-developer": "Software Developer",
+    "today": "Today"
 }
