@@ -10,41 +10,35 @@
         {{'profile-production-tech' | translate}}
     </p>
     <h2>{{ 'cv' | translate }}</h2>
-    <div class="cv-header" style="width: 100%" fxLayout="row" fxLayoutAlign="end center">
-        <div style="width: 15%;">2018 - 2020 </div>
+
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left header">2022 - {{"today" | translate}}</div>
+        <div class="cv-right header">{{ "software-developer" | translate}} </div>
     </div>
     <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-header" style="width: 30%; text-align: right;" fxLayout="row" fxLayoutAlign="end center">2018 - 2020</div>
-        <div class="cv-header" style="width: 68%;" fxLayout="row" fxLayoutAlign="start center"> Master of Science: {{
-            "computer-science" |
-            translate}} </div>
+        <div class="cv-left"> {{"employer" | translate}} </div>
+        <div class="cv-right"> Ceyoniq Technology GmbH </div>
     </div>
     <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div style="width: 30%;" fxLayout="row" fxLayoutAlign="end"> {{"university" | translate}} </div>
-        <div style="width: 68%;" fxLayout="row" fxLayoutAlign="start"> {{ "uni-paderborn" | translate}} </div>
+        <div class="cv-left header">2020 - 2022</div>
+        <div class="cv-right header"> {{ "software-developer" | translate}}</div>
     </div>
-    <div fxLayout="row" style="width: 100%">
-        <div fxLayout="column" fxLayoutAlign="space-around end" style="margin-right: 1em; width: 50%;">
-            <div class="cv-header"> 2022 - {{"today" | translate}} </div>
-            <div> {{"employer" | translate}} </div>
-            <div class="cv-header"> 2020 - 2022 </div>
-            <div> {{"employer" | translate}} </div>
-            <div class="cv-header"> 2018 - 2020 </div>
-            <div> {{"university" | translate}} </div>
-        </div>
-        <div fxLayout="column">
-            <div class="cv-header"> {{ "software-developer" | translate}} </div>
-            <div> Ceyoniq Technology GmbH</div>
-            <div class="cv-header"> {{ "software-developer" | translate}} </div>
-            <div> 4ALLPORTAL GmbH</div>
-            <div class="cv-header"> Master of Science: {{ "computer-science" | translate}} </div>
-            <div> {{ "uni-paderborn" | translate}} </div>
-        </div>
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left"> {{"employer" | translate}} </div>
+        <div class="cv-right"> 4ALLPORTAL GmbH </div>
+    </div>
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left header">2018 - 2020</div>
+        <div class="cv-right header"> Master of Science: {{"computer-science" | translate}} </div>
+    </div>
+    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left"> {{"university" | translate}} </div>
+        <div class="cv-right"> {{ "uni-paderborn" | translate}} </div>
     </div>
 
     <h2> Technologies </h2>
     This section contains a non-exhaustive list of technologies I use frequently and enjoy working with.
-    <h3> Spring Cosmos </h3>
+    <h3> Spring Framework </h3>
     <div fxLayout="column" fxLayoutAlign="space-around start">
         <div>Boot</div>
         <div>Web</div>

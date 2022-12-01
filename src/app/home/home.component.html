@@ -1,16 +1,19 @@
 <div style="margin: 1em">
     <h1> {{'welcome' | translate}} </h1>
 
+    <div fxLayout="column" style="width: 30%; margin: 1em; float:right">
+        <img src="/assets/shup.jpg" style="margin-bottom: 1em;">
+        <button [routerLink]="['/contact']" mat-raised-button color="accent"> {{'contact-me-button' | translate}}
+        </button>
+    </div>
     <p> {{'welcome-paragraph' | translate}} {{'welcome-purpose-paragraph' | translate}} </p>
-    <p> {{'welcome-profile-section' | translate}} <a style="color: currentColor" [routerLink]="['/profile']"> Profile
-            Section</a>.
-            {{'welcome-contact' | translate}} 
-        <a style="color: currentColor" [routerLink]="['/profile']"> 
-            {{'contact-form' | translate}}
-        </a>.
-    <p> 
+    <p> {{'welcome-profile-section' | translate}}
+        <a style="color: currentColor" [routerLink]="['/profile']"> Profile Section</a>.
+        {{'welcome-contact' | translate}}
+        <a style="color: currentColor" [routerLink]="['/profile']"> {{'contact-form' | translate}} </a>.
     </p>
 </div>
+
 
 <mat-card style="margin: 1em; clear:right">
     <mat-card-title [routerLink]="['/projects']" mat-ripple class="clickable">

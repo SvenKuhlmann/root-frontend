@@ -1,4 +1,19 @@
-.cv-header {
+.cv-left{
+    width: 30%; 
+    text-align: right;
+}
+
+.cv-left.header{
+    font-weight: 900;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+.cv-right{
+    width: 68%;
+}
+
+.cv-right.header{
     font-weight: 900;
     font-size: 1.2em;
     margin-top: 1em;
