@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   resizeObservable$?: Observable<Event>
   resizeSubscription$?: Subscription
   height?: number;
-  width?: number;
+  public static width?: number;
   isNavBarOpenByDefault?: boolean;
   themes: Theme[] = [{ name: "dark-theme", label: "Dark Mode" }, { name: "light-theme", label: "Light Mode" }];
   activeTheme = this.themes[0]
@@ -38,17 +38,15 @@ export class AppComponent implements OnInit {
       }
     }
     this.setScreenSize()
-    this.resizeObservable$ = fromEvent(window, 'resize')
-    this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => { this.setScreenSize() })
+    fromEvent(window, 'resize').subscribe(evt => { this.setScreenSize() })
     this.authService.loginEvent.then(() => { this.scopes = <String[]>this.oauthService.getGrantedScopes() });
   }
   setScreenSize() {
     this.height = window.innerHeight;
-    this.width = window.innerWidth;
-    console.log("with ", this.width)
-    this.isNavBarOpenByDefault = this.width > 1200;
+    AppComponent.width = window.innerWidth;
+    this.isNavBarOpenByDefault = AppComponent.width   > 1200;
     this.sidenavOpened = this.isNavBarOpenByDefault;
-    this.isFullToolbarShown = this.width > 600;
+    this.isFullToolbarShown = AppComponent.width  > 600;
     console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
   }
   login() {

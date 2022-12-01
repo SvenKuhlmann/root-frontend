@@ -1,18 +1,22 @@
-<div style="margin: 1em">
-    <h1> {{'welcome' | translate}} </h1>
-
-    <div fxLayout="column" style="width: 30%; margin: 1em; float:right">
-        <img src="/assets/shup.jpg" style="margin-bottom: 1em;">
-        <button [routerLink]="['/contact']" mat-raised-button color="accent"> {{'contact-me-button' | translate}}
-        </button>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" style="margin: 1em;">
+        <img *ngIf="width > 300" src="/assets/shup.jpg" style="width: 20em; height: 21em;">
+        <img *ngIf="width < 300" src="/assets/shup.jpg" style="width: 10em; height: 11em;">
+        <div fxLayout="column" fxLayoutAlign="space-between start">
+            <div class="bullet-point"> - Fullstack Developer </div>
+            <div class="bullet-point"> - System Designer </div>
+            <div class="bullet-point"> - Software Architect </div>
+            <div class="bullet-point"> - Kubernetes Cluster Admin</div>
+            <div class="bullet-point"> - Master of Science </div>
+            <div fxLayout="row wrap" fxLayoutAlign="end center" style="width: 100%">
+                <button mat-raised-button [routerLink]="['/contact']" color="accent"> Contact </button>
+                <button mat-raised-button [routerLink]="['/profile']" style="margin: 1em"> Profile </button>
+            </div>
+        </div>
     </div>
-    <p> {{'welcome-paragraph' | translate}} {{'welcome-purpose-paragraph' | translate}} </p>
-    <p> {{'welcome-profile-section' | translate}}
-        <a style="color: currentColor" [routerLink]="['/profile']"> Profile Section</a>.
-        {{'welcome-contact' | translate}}
-        <a style="color: currentColor" [routerLink]="['/profile']"> {{'contact-form' | translate}} </a>.
-    </p>
 </div>
+
+
 
 
 <mat-card style="margin: 1em; clear:right">

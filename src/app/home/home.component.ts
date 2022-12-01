@@ -6,6 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { fromEvent } from 'rxjs';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +17,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  width = window.innerWidth;
 
   constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {
+    fromEvent(window, 'resize').subscribe(evt => { this.width = window.innerWidth })
   }
 
   route(){
