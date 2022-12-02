@@ -1,20 +1,24 @@
-<div fxLayout="row" fxLayoutAlign="space-around center">
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" style="margin: 1em;">
-        <img *ngIf="width > 300" src="/assets/shup.jpg" style="width: 20em; height: 21em;">
-        <img *ngIf="width < 300" src="/assets/shup.jpg" style="width: 10em; height: 11em;">
-        <div fxLayout="column" fxLayoutAlign="space-between start">
-            <div class="bullet-point"> - Fullstack Developer </div>
-            <div class="bullet-point"> - System Designer </div>
-            <div class="bullet-point"> - Software Architect </div>
-            <div class="bullet-point"> - Kubernetes Cluster Admin</div>
-            <div class="bullet-point"> - Master of Science </div>
-            <div fxLayout="row wrap" fxLayoutAlign="end center" style="width: 100%">
-                <button mat-raised-button [routerLink]="['/contact']" color="accent"> Contact </button>
-                <button mat-raised-button [routerLink]="['/profile']" style="margin: 1em"> Profile </button>
+<div fxLayout="row" fxLayoutAlign="space-around center" style="height: 50%">
+    <div>
+        <mat-card fxLayout="row" fxLayoutAlign="space-around" style="margin: 1em">
+            <img src="/assets/shup.jpg" style="max-width: 20em; max-height: 22em; width: 40%;">
+            <div fxLayout="column" fxLayoutAlign="space-between start">
+                <div class="bullet-point"> - Fullstack Developer </div>
+                <div class="bullet-point"> - System Designer </div>
+                <div class="bullet-point"> - Software Architect </div>
+                <div class="bullet-point"> - Kubernetes Cluster Admin</div>
+                <div class="bullet-point"> - Master of Science </div>
             </div>
+        </mat-card>
+        <div fxLayout="row" [style.margin]="'1em'">
+            <button mat-raised-button [routerLink]="['/profile']" fxFlex> Profile </button>
+            <button mat-raised-button [routerLink]="['/contact']" fxFlex [style.margin-left]="'1em'" color="accent">
+                Contact
+            </button>
         </div>
     </div>
 </div>
+
 
 
 
