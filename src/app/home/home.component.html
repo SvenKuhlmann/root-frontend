@@ -1,7 +1,35 @@
-<div fxLayout="row" fxLayoutAlign="space-around center" style="height: 50%">
-    <div>
-        <mat-card fxLayout="row" fxLayoutAlign="space-around" style="margin: 1em">
-            <img src="/assets/shup.jpg" style="max-width: 20em; max-height: 22em; width: 40%;">
+<div fxLayout="column" fxLayoutAlign="start center">
+    <span fxFlex.gt-xs="10vh" fxFlex.xs="2vh"> </span>
+    <mat-card fxLayout.xs="row wrap" fxLayout.gt-xs="column" style="margin-left: 5vw; margin-right: 5vw;">
+        <div fxLayout.xs="row wrap" fxLayout.gt-xs="row">
+            <img src="/assets/me_300.jpg" fxFlex.xs="40vw" fxFlex.gt-xs="50%" fxFlex.gt-sm="min(300px, 30vh)"
+                style="margin-bottom: 2vh">
+            <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex.xs="40vw" fxFlex.gt-sm="300px"
+                style="margin-bottom: 2vh">
+                <div class="bullet-point"> - Fullstack Developer </div>
+                <div class="bullet-point"> - System Designer </div>
+                <div class="bullet-point"> - Software Architect </div>
+                <div class="bullet-point"> - Cluster Administrator</div>
+                <div class="bullet-point"> - Master of Science </div>
+            </div>
+        </div>
+        <div fxLayout.xs="row wrap" fxLayout.gt-xs="row" style="width: 100%">
+            <button mat-raised-button [routerLink]="['/profile']" fxFlex.xs="40vw" fxFlex.gt-xs="50%"
+                fxFlex.gt-sm="min(300px, 30vh)">
+                Profile </button>
+            <button mat-raised-button [routerLink]="['/contact']" fxFlex.xs fxFlex.gt-sm="300px" color="accent">
+                Contact
+            </button>
+        </div>
+    </mat-card>
+    <span fxFlex.gt-xs="10vh" fxFlex.xs="2vh"> </span>
+</div>
+
+
+<!--div fxLayout="column" fxLayoutAlign="space-around center">
+    <div class="card-holder">
+        <mat-card fxLayout.xs="row wrap" class="card">
+            <img src="/assets/shup.jpg" fxFlex.xs="100" fxFlex.md="40" style="margin: 5vw">
             <div fxLayout="column" fxLayoutAlign="space-between start">
                 <div class="bullet-point"> - Fullstack Developer </div>
                 <div class="bullet-point"> - System Designer </div>
@@ -10,16 +38,9 @@
                 <div class="bullet-point"> - Master of Science </div>
             </div>
         </mat-card>
-        <div fxLayout="row" [style.margin]="'1em'">
-            <button mat-raised-button [routerLink]="['/profile']" fxFlex> Profile </button>
-            <button mat-raised-button [routerLink]="['/contact']" fxFlex [style.margin-left]="'1em'" color="accent">
-                Contact
-            </button>
-        </div>
+
     </div>
-</div>
-
-
+</div-->
 
 
 
