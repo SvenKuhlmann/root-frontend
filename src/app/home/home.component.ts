@@ -6,8 +6,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { fromEvent } from 'rxjs';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
