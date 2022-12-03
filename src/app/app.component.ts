@@ -11,13 +11,12 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent implements OnInit {
 
-
   sidenavOpened?: boolean;
   scopes?: String[];
   resizeObservable$?: Observable<Event>
   resizeSubscription$?: Subscription
   height?: number;
-  public static width?: number;
+  width?: number;
   isNavBarOpenByDefault?: boolean;
   themes: Theme[] = [{ name: "dark-theme", label: "Dark Mode" }, { name: "light-theme", label: "Light Mode" }];
   activeTheme = this.themes[0]
@@ -43,11 +42,12 @@ export class AppComponent implements OnInit {
   }
   setScreenSize() {
     this.height = window.innerHeight;
-    AppComponent.width = window.innerWidth;
-    this.isNavBarOpenByDefault = AppComponent.width   > 1200;
+    this.width = window.innerWidth;
+
+    this.isFullToolbarShown = this.width > 600;
+
+    this.isNavBarOpenByDefault = this.width > 1200;
     this.sidenavOpened = this.isNavBarOpenByDefault;
-    this.isFullToolbarShown = AppComponent.width  > 600;
-    console.log("isNavBarOpenByDefault ", this.isNavBarOpenByDefault)
   }
   login() {
     this.oauthService.initLoginFlow();

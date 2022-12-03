@@ -17,15 +17,11 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  width = window.innerWidth;
 
   constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {
-    fromEvent(window, 'resize').subscribe(evt => { this.width = window.innerWidth })
   }
 
-  route(){
 
-  }
 }
