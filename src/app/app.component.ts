@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   themes: Theme[] = [{ name: "dark-theme", label: "Dark Mode" }, { name: "light-theme", label: "Light Mode" }];
   activeTheme = this.themes[0]
   isFullToolbarShown?: boolean;
+  langs=["en", "de"]
   languages: Map<string, string> = new Map([
     ['en', 'English'],
     ['de', 'German'],
