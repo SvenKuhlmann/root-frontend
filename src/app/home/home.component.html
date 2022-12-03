@@ -1,43 +1,27 @@
 <div fxLayout.xs="column" fxLayout.sm="row" fxLayout.md="row" fxLayout.lg="row" fxLayout.xl="row"
     fxLayoutAlign.gt-xs="center">
-    <mat-card style="margin: 1em; padding: 1em;" fxFlex.sm="33%" fxFlex.md="25%" fxFlex.lg="15%" fxFlex.gt-lg="12%">
-        <img src="/assets/me_300.jpg" fxFlex="1 1 100%">
-    </mat-card>
-    <mat-card style="margin: 1em; padding: 1em;" fxLayout="column" fxLayoutAlign="space-around center" fxFlex.sm="33%"
-        fxFlex.md="25%" fxFlex.lg="18%" fxFlex.gt-lg="12%">
-        <div> - Fullstack Developer </div>
-        <div> - System Designer </div>
-        <div> - Software Architect </div>
-        <div> - Cluster Administrator</div>
-        <div> - Master of Science </div>
+    <mat-card style="margin: 1em" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.lg="40%" fxFlex.gt-lg="24%"
+        fxLayout="row wrap">
+        <img style="padding: 0.5em" src="/assets/me_300.jpg" fxFlex="100" fxShow.gt-xs="false">
+        <img src="/assets/me_300.jpg" fxFlex="50" fxShow.xs="false">
+        <div fxLayout="column" fxLayoutAlign="space-around stretch" fxFlex.xs="100%" fxFlex.gt-xs="50%">
+            <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex="100%">
+                <div> - Fullstack Developer </div>
+                <div> - System Designer </div>
+                <div> - Software Architect </div>
+                <div> - Cluster Administrator</div>
+                <div> - Master of Science </div>
+            </div>
+            <div fxShow.xs="false" fxLayoutAlign="end" >
+                <button style="margin-right: 1em" [routerLink]="['/profile']" mat-raised-button> Profile </button>
+                <button [routerLink]="['/contact']" mat-raised-button color="primary"> Contact </button>
+            </div>
+        </div>
+        <button [routerLink]="['/profile']" mat-raised-button fxFlex="100" fxShow.gt-xs="false"> Profile </button>
+        <button [routerLink]="['/contact']" mat-raised-button fxFlex="100" fxShow.gt-xs="false" color="primary"> Contact
+        </button>
     </mat-card>
 </div>
-<div fxLayout.xs="column" fxLayout.sm="row" fxLayout.md="row" fxLayout.lg="row" fxLayout.xl="row"
-    fxLayoutAlign.gt-xs="center">
-    <button mat-raised-button [routerLink]="['/profile']" fxFlex.sm="33%" fxFlex.md="25%" fxFlex.lg="15%"
-        fxFlex.gt-lg="12%" style="margin: 1em">
-        Profile
-    </button>
-    <button mat-raised-button [routerLink]="['/contact']" fxFlex.sm="33%" fxFlex.md="25%" fxFlex.lg="15%"
-        fxFlex.gt-lg="12%" color="primary" style="margin: 1em">
-        Contact
-    </button>
-</div>
-
-<!--div fxLayout="column" fxLayoutAlign="start center">
-    <span fxFlex.gt-xs="10vh" fxFlex.xs="2vh"> </span>
-    <mat-card fxLayout.xs="row wrap" fxLayout.gt-xs="column" style="margin-left: 5vw; margin-right: 5vw; padding:0vw">
-        <div fxLayout.xs="row wrap" fxLayout.gt-xs="row">
-
-        </div>
-        <div fxLayout.xs="row wrap" fxLayout.gt-xs="row" style="width: 100%" fxLayoutGap.xs="4vw"
-            fxLayoutGap.gt-xs="2%">
-
-        </div>
-    </mat-card>
-    <span fxFlex.gt-xs="10vh" fxFlex.xs="2vh"> </span>
-</div-->
-
 
 
 <mat-card style="margin: 1em; clear:right">
