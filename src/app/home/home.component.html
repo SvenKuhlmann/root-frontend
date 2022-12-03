@@ -1,11 +1,12 @@
 <div fxLayout="column" fxLayoutAlign="start center">
     <span fxFlex.gt-xs="10vh" fxFlex.xs="2vh"> </span>
-    <mat-card fxLayout.xs="row wrap" fxLayout.gt-xs="column" style="margin-left: 5vw; margin-right: 5vw;">
+    <mat-card fxLayout.xs="row wrap" fxLayout.gt-xs="column" style="margin-left: 4vw; margin-right: 4vw;">
         <div fxLayout.xs="row wrap" fxLayout.gt-xs="row">
-            <img src="/assets/me_300.jpg" fxFlex.xs="40vw" fxFlex.gt-xs="50%" fxFlex.gt-sm="min(300px, 30vh)"
+            <img src="/assets/me_300.jpg" fxFlex.xs="40vw" fxFlex.sm="47%" fxFlex.gt-sm="300px"
                 style="margin-bottom: 2vh">
-            <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex.xs="40vw" fxFlex.gt-sm="300px"
-                style="margin-bottom: 2vh">
+            <div fxFlex.xs="2vw" fxFlex.sm="6%" fxFlex.gt-sm="20px"></div>
+            <div fxLayout="column" fxLayoutAlign="space-between start" fxFlex.xs="40vw" fxFlex.sm="47%"
+                fxFlex.gt-sm="300px" style="margin-bottom: 2vh;">
                 <div class="bullet-point"> - Fullstack Developer </div>
                 <div class="bullet-point"> - System Designer </div>
                 <div class="bullet-point"> - Software Architect </div>
@@ -14,10 +15,13 @@
             </div>
         </div>
         <div fxLayout.xs="row wrap" fxLayout.gt-xs="row" style="width: 100%">
-            <button mat-raised-button [routerLink]="['/profile']" fxFlex.xs="40vw" fxFlex.gt-xs="50%"
-                fxFlex.gt-sm="min(300px, 30vh)">
-                Profile </button>
-            <button mat-raised-button [routerLink]="['/contact']" fxFlex.xs fxFlex.gt-sm="300px" color="accent">
+            <button mat-raised-button [routerLink]="['/profile']" fxFlex.xs="40vw" fxFlex.gt-xs="47%"
+                fxFlex.gt-sm="300px">
+                Profile
+            </button>
+            <div fxFlex.xs="2vw" fxFlex.sm="6%" fxFlex.gt-sm="20px"></div>
+            <button mat-raised-button [routerLink]="['/contact']" fxFlex.xs="40vw" fxFlex.sm="47%" fxFlex.gt-sm="300px"
+                color="accent">
                 Contact
             </button>
         </div>
