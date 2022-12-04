@@ -1,6 +1,17 @@
-<div style=" height: 50%; width: 100%;">
-    <div fxLayout="column" fxLayoutAlign="space-around center" style="height: 100%; width: 100%;">
-        <h1> {{"contact" | translate}} </h1>
-        <div> Coming Soon</div>
-    </div>
+<div fxLayout="column" fxLayoutAlign="space-around center">
+    <h1> {{"contact" | translate}} </h1>
+</div>
+<form [formGroup]="jobForm" fxLayout="column" style="margin: 1em">
+    <mat-form-field>
+        <mat-label> Job Title </mat-label>
+        <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label> Description </mat-label>
+        <textarea matInput type="text" formControlName="description"></textarea>
+    </mat-form-field>
+</form>
+<div>
+    <div fxFlex="1 1 auto"></div>
+    <button mat-raised-button (click)="submit()" style="margin: 1em"> Submit </button>
 </div>

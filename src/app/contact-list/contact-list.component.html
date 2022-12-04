@@ -1,0 +1,6 @@
+<div fxLayout="column" fxLayoutAlign="space-around center">
+    <h1> Contact Requests </h1>
+</div>
+<mat-nav-list style="margin: 1em">
+    <mat-list-item *ngFor="let contact of contacts?.jobs" [class.mat-elevation-z2]="true"> {{contact.description}} </mat-list-item>
+</mat-nav-list>
