@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { ContactService, JobRequest } from './contact.service';
+import { ContactService } from './contact.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class ContactComponent implements OnInit {
 
   jobForm = new FormGroup({
-    description: new FormControl(''),
+    jobTitle: new FormControl(''),
+    jobDescription: new FormControl(''),
+    employerName: new FormControl(''),
+    employerDescription: new FormControl(''),
   });
   
 
@@ -29,7 +32,7 @@ export class ContactComponent implements OnInit {
 
   submit() {
     console.log(this.jobForm.getRawValue())
-    this.contactService.post(this.jobForm.getRawValue() as JobRequest).subscribe();
+    this.contactService.post(this.jobForm.getRawValue()).subscribe();
   }
 
 }

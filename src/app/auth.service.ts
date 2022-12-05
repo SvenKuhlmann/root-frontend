@@ -28,7 +28,7 @@ export const authConfig: AuthConfig = {
 
     clientId: 'root',
 
-    scope: 'openid root-project-edit',
+    scope: 'openid root-project-edit roles',
 
     responseType: 'code',
 

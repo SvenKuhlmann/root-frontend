@@ -11,7 +11,7 @@ export class ContactService {
 
     constructor(private http: HttpClient, private oauthService: OAuthService) { }
 
-    post(jobRequest: JobRequest): Observable<any> {
+    post(jobRequest: any): Observable<any> {
         return this.http.post("/api/contact/job", jobRequest);
     }
 
@@ -23,16 +23,12 @@ export class ContactService {
     }
 }
 
-export class JobRequest {
-
-    constructor(
-      public description: string,
-    ) {  }
-  
-  }
 
 export interface Contact{
-    description: string
+    jobTitle: string,
+    jobDescription: string,
+    employerName: string,
+    employerDescription: string,
 }
 
 export interface ContactList{

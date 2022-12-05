@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContactService, ContactList, Contact } from '../contact/contact.service';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-contact-list',
@@ -15,9 +16,10 @@ export class ContactListComponent implements OnInit {
 
   contacts?: ContactList;
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private oauthService : OAuthService) { }
 
   ngOnInit(): void {
+    console.log(this.oauthService.getIdentityClaims())
     this.contactService.getJobOffers().subscribe(list => this.contacts = list);
   }
 

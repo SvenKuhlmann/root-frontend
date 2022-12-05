@@ -4,11 +4,19 @@
 <form [formGroup]="jobForm" fxLayout="column" style="margin: 1em">
     <mat-form-field>
         <mat-label> Job Title </mat-label>
-        <input matInput type="text">
+        <input matInput type="text" formControlName="jobTitle">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label> Description </mat-label>
-        <textarea matInput type="text" formControlName="description"></textarea>
+        <mat-label> Job Description </mat-label>
+        <textarea matInput type="text" formControlName="jobDescription"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Employer Name </mat-label>
+        <input matInput type="text" formControlName="employerName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label> Employer Description </mat-label>
+        <textarea matInput type="text" formControlName="employerDescription"></textarea>
     </mat-form-field>
 </form>
 <div>
