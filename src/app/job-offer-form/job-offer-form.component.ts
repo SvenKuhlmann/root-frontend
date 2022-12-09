@@ -18,21 +18,32 @@ import { ContactService } from '../contact/contact.service';
 })
 export class JobOfferFormComponent implements OnInit {
 
-  jobForm = new FormGroup({
-    jobTitle: new FormControl(''),
-    jobDescription: new FormControl(''),
-    employerName: new FormControl(''),
-    employerDescription: new FormControl(''),
+  offer = new FormGroup({
+    job: new FormGroup({
+      jobTitle: new FormControl(''),
+      jobDescription: new FormControl(''),
+      salary: new FormControl()
+    }),
+    employer: new FormGroup({
+      employerName: new FormControl(''),
+      employerDescription: new FormControl(''),
+    }),
+    contact: new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      email: new FormControl(''),
+      telephone: new FormControl('')
+    })
   });
-  
 
+  jobDescriptionPlaceholder: string = "" //TODO hints include Technologie
   constructor(private contactService: ContactService) { }
 
   ngOnInit(): void {
   }
 
   submit() {
-    console.log(this.jobForm.getRawValue())
-    this.contactService.post(this.jobForm.getRawValue()).subscribe();
+    console.log(this.offer.getRawValue())
+    this.contactService.post(this.offer.getRawValue()).subscribe();
   }
 }

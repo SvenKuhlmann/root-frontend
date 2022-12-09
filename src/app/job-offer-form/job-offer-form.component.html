@@ -1,24 +1,59 @@
 <div fxLayout="column" fxLayoutAlign="space-around center">
-    <h1> {{"contact" | translate}} </h1>
+    <h1> {{"Job Offer Form" | translate}} </h1>
 </div>
-<form [formGroup]="jobForm" fxLayout="column" style="margin: 1em">
-    <mat-form-field>
-        <mat-label> Job Title </mat-label>
-        <input matInput type="text" formControlName="jobTitle">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label> Job Description </mat-label>
-        <textarea matInput type="text" formControlName="jobDescription"></textarea>
-    </mat-form-field>
-    <mat-divider></mat-divider>
-    <mat-form-field>
-        <mat-label> Employer Name </mat-label>
-        <input matInput type="text" formControlName="employerName">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label> Employer Description </mat-label>
-        <textarea matInput type="text" formControlName="employerDescription"></textarea>
-    </mat-form-field>
+<form [formGroup]="offer" fxLayout="column" style="margin: 1em">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <h2> {{"Job Information" | translate}} </h2>
+    </div>
+    <div formGroupName="job" fxLayout="column" style="width: 100%">
+        <mat-form-field>
+            <mat-label> Job Title </mat-label>
+            <input matInput type="text" formControlName="jobTitle">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Job Description </mat-label>
+            <textarea matInput type="text" [placeholder]="jobDescriptionPlaceholder"
+                formControlName="jobDescription"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Salary </mat-label>
+            <input matInput type="text" formControlName="salary">
+        </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <h2> {{"Employer Information" | translate}} </h2>
+    </div>
+    <div formGroupName="employer" fxLayout="column" style="width: 100%">
+        <mat-form-field>
+            <mat-label> Employer Name </mat-label>
+            <input matInput type="text" formControlName="employerName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Employer Description </mat-label>
+            <textarea matInput type="text" formControlName="employerDescription"></textarea>
+        </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <h2> {{"Contact Details" | translate}} </h2>
+    </div>
+    <div formGroupName="contact" fxLayout="column" style="width: 100%">
+        <mat-form-field>
+            <mat-label> First Name </mat-label>
+            <input matInput type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Last Name </mat-label>
+            <textarea matInput type="text" formControlName="lastName"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Email </mat-label>
+            <textarea matInput type="email" formControlName="email"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label> Telephone </mat-label>
+            <textarea matInput type="text" formControlName="telephone"></textarea>
+        </mat-form-field>
+    </div>
 </form>
 <div>
     <div fxFlex="1 1 auto"></div>
