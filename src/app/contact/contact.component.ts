@@ -7,32 +7,20 @@ import { ContactService } from './contact.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider'; 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, TranslateModule, ReactiveFormsModule, FlexLayoutModule, MatButtonModule, MatFormFieldModule, MatInputModule],
+  imports: [CommonModule, MatDividerModule, TranslateModule, ReactiveFormsModule, FlexLayoutModule, MatButtonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
 
-  jobForm = new FormGroup({
-    jobTitle: new FormControl(''),
-    jobDescription: new FormControl(''),
-    employerName: new FormControl(''),
-    employerDescription: new FormControl(''),
-  });
-  
-
-  constructor(private contactService: ContactService) { }
-
   ngOnInit(): void {
+    
   }
 
-  submit() {
-    console.log(this.jobForm.getRawValue())
-    this.contactService.post(this.jobForm.getRawValue()).subscribe();
-  }
 
 }
