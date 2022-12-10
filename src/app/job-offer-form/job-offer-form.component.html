@@ -8,12 +8,12 @@
     <div formGroupName="job" fxLayout="column" style="width: 100%">
         <mat-form-field>
             <mat-label> Job Title </mat-label>
-            <input matInput type="text" formControlName="jobTitle">
+            <input matInput type="text" formControlName="title">
         </mat-form-field>
         <mat-form-field>
             <mat-label> Job Description </mat-label>
             <textarea matInput type="text" [placeholder]="jobDescriptionPlaceholder"
-                formControlName="jobDescription"></textarea>
+                formControlName="description"></textarea>
         </mat-form-field>
         <mat-form-field>
             <mat-label> Salary </mat-label>
@@ -26,11 +26,11 @@
     <div formGroupName="employer" fxLayout="column" style="width: 100%">
         <mat-form-field>
             <mat-label> Employer Name </mat-label>
-            <input matInput type="text" formControlName="employerName">
+            <input matInput type="text" formControlName="name">
         </mat-form-field>
         <mat-form-field>
             <mat-label> Employer Description </mat-label>
-            <textarea matInput type="text" formControlName="employerDescription"></textarea>
+            <textarea matInput type="text" formControlName="description"></textarea>
         </mat-form-field>
     </div>
     <div fxLayout="column" fxLayoutAlign="space-around center">

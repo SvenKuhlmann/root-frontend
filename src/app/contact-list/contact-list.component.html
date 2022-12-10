@@ -2,7 +2,7 @@
     <h1> Contact Requests </h1>
 </div>
 <mat-nav-list style="margin: 1em">
-    <mat-list-item *ngFor="let contact of contacts?.jobs" [class.mat-elevation-z2]="true">
-        <div> {{contact.jobTitle}} {{contact.employerName}}  </div> 
+    <mat-list-item [routerLink]="['/', 'offer', offer.id]" *ngFor="let offer of contacts?.offers" [class.mat-elevation-z2]="true">
+        <div> {{offer.job.title}} {{offer.employer.name}}  </div> 
     </mat-list-item>
 </mat-nav-list>

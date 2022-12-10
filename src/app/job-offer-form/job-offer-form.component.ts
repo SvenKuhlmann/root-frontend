@@ -20,13 +20,13 @@ export class JobOfferFormComponent implements OnInit {
 
   offer = new FormGroup({
     job: new FormGroup({
-      jobTitle: new FormControl(''),
-      jobDescription: new FormControl(''),
-      salary: new FormControl()
+      title: new FormControl(''),
+      description: new FormControl(''),
+      salary: new FormControl('')
     }),
     employer: new FormGroup({
-      employerName: new FormControl(''),
-      employerDescription: new FormControl(''),
+      name: new FormControl(''),
+      description: new FormControl(''),
     }),
     contact: new FormGroup({
       firstName: new FormControl(''),
