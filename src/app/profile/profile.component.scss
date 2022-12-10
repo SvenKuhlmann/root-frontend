@@ -1,5 +1,5 @@
 .cv-left{
-    width: 30%; 
+    width: 49%; 
     text-align: right;
 }
 
@@ -10,11 +10,21 @@
 }
 
 .cv-right{
-    width: 68%;
+    width: 49%;
+
 }
 
 .cv-right.header{
     font-weight: 900;
     font-size: 1.2em;
     margin-top: 1em;
+}
+
+.xs-header{
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.xs-item{
+    text-align: center;
 }

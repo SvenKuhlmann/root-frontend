@@ -5,13 +5,17 @@
 
     <h2>{{ 'cv' | translate }}</h2>
 
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left header">2022 - {{"today" | translate}}</div>
-        <div class="cv-right header">{{ "software-developer" | translate}} </div>
+    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
+        <div [ngClass.gt-xs]="'cv-left header'" [ngClass.xs]="'xs-header'">2022 - {{"today" | translate}}</div>
+        <div [ngClass.gt-xs]="'cv-right header'" [ngClass.xs]="'xs-header'">{{ "software-developer" | translate}} </div>
     </div>
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left"> {{"employer" | translate}} </div>
-        <div class="cv-right"> Ceyoniq Technology GmbH </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left" fxShow.xs="false"> {{"employer" | translate}} </div>
+        <div [ngClass.gt-xs]="'cv-right'"> Ceyoniq Technology GmbH </div>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
+        <div class="cv-left" fxShow.xs="false"> {{"tech-stack" | translate}} </div>
+        <div [ngClass.gt-xs]="'cv-right'" [ngClass.xs]="'xs-item'"> Java, Spring, Hibernate, Gradle, PostgreSQL, Kubernetes </div>
     </div>
     <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
         <div class="cv-left header">2020 - 2022</div>
