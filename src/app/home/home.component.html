@@ -1,6 +1,6 @@
 <div fxLayout.xs="column" fxLayout.sm="row" fxLayout.md="row" fxLayout.lg="row" fxLayout.xl="row"
     fxLayoutAlign.gt-xs="center">
-    <mat-card style="margin: 1em" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.lg="40%" fxFlex.gt-lg="24%"
+    <mat-card style="margin: 1em" fxFlex.sm="100%" fxFlex.md="60%" fxFlex.lg="45%" fxFlex.gt-lg="34%"
         fxLayout="row wrap">
         <img style="padding: 0.5em" src="/assets/me_300.jpg" fxFlex="100" fxShow.gt-xs="false">
         <img src="/assets/me_300.jpg" fxFlex="50" fxShow.xs="false">
@@ -13,13 +13,13 @@
                 <div> - Master of Science </div>
             </div>
             <div fxShow.xs="false" fxLayoutAlign="end" >
-                <button style="margin-right: 1em" [routerLink]="['/profile']" mat-raised-button> Profile </button>
-                <button style="margin-right: 1em" [routerLink]="['/pitch']" mat-raised-button> Pitch Idea </button>
+                <button style="margin-right: 1em" [routerLink]="['/profile']" mat-raised-button> {{"profile" | translate}} </button>
+                <!--button style="margin-right: 1em" [routerLink]="['/pitch']" mat-raised-button> Pitch Idea </button-->
                 <button [routerLink]="['/offer']" mat-raised-button color="primary"> {{"hire" | translate}} </button>
             </div>
         </div>
         <button [routerLink]="['/profile']" mat-raised-button fxFlex="100" fxShow.gt-xs="false"> Profile </button>
-        <button [routerLink]="['/contact']" mat-raised-button fxFlex="100" fxShow.gt-xs="false" color="primary"> Contact
+        <button [routerLink]="['/offer']" mat-raised-button fxFlex="100" fxShow.gt-xs="false" color="primary"> Contact
         </button>
     </mat-card>
 </div>
