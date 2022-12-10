@@ -1,26 +1,35 @@
 <div fxLayout.xs="column" fxLayout.sm="row" fxLayout.md="row" fxLayout.lg="row" fxLayout.xl="row"
     fxLayoutAlign.gt-xs="center">
-    <mat-card style="margin: 1em" fxFlex.sm="100%" fxFlex.md="60%" fxFlex.lg="45%" fxFlex.gt-lg="34%"
-        fxLayout="row wrap">
-        <img style="padding: 0.5em" src="/assets/me_300.jpg" fxFlex="100" fxShow.gt-xs="false">
-        <img src="/assets/me_300.jpg" fxFlex="50" fxShow.xs="false">
-        <div fxLayout="column" fxLayoutAlign="space-around stretch" fxFlex.xs="100%" fxFlex.gt-xs="50%">
-            <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex="100%">
-                <div> - Fullstack Developer </div>
-                <div> - System Designer </div>
-                <div> - Software Architect </div>
-                <div> - Cluster Administrator</div>
-                <div> - Master of Science </div>
+    <mat-card style="margin: 1em" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.lg="40%" fxFlex.gt-lg="24%">
+        <div fxLayout="row wrap">
+            <img style="padding: 0.5em" src="/assets/me_300.jpg" fxFlex="100" fxShow.gt-xs="false">
+            <img src="/assets/me_300.jpg" fxFlex="50" fxShow.xs="false">
+            <div fxLayout="column" fxLayoutAlign="space-around stretch" fxFlex.xs="100%" fxFlex.gt-xs="50%">
+                <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex="20%">
+                    <h2> Sven Kuhlmann </h2>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex="80%">
+                    <div> - Fullstack Developer </div>
+                    <div> - System Designer </div>
+                    <div> - Software Architect </div>
+                    <div> - Cluster Administrator</div>
+                    <div> - Master of Science </div>
+                </div>
+                <div fxShow.xs="false" fxLayoutAlign="end">
+                    <button style="margin-right: 1em" [routerLink]="['/profile']" mat-raised-button> {{"profile" |
+                        translate}} </button>
+                    <!--button style="margin-right: 1em" [routerLink]="['/pitch']" mat-raised-button> Pitch Idea </button-->
+                    <button [routerLink]="['/offer']" mat-raised-button color="primary"> {{"hire" | translate}}
+                    </button>
+                </div>
             </div>
-            <div fxShow.xs="false" fxLayoutAlign="end" >
-                <button style="margin-right: 1em" [routerLink]="['/profile']" mat-raised-button> {{"profile" | translate}} </button>
-                <!--button style="margin-right: 1em" [routerLink]="['/pitch']" mat-raised-button> Pitch Idea </button-->
-                <button [routerLink]="['/offer']" mat-raised-button color="primary"> {{"hire" | translate}} </button>
-            </div>
+            <button [routerLink]="['/profile']" mat-raised-button fxFlex="100" fxShow.gt-xs="false"> {{"profile" |
+                translate}} </button>
+            <button [routerLink]="['/offer']" mat-raised-button fxFlex="100" fxShow.gt-xs="false" color="primary">
+                {{"hire"
+                | translate}}
+            </button>
         </div>
-        <button [routerLink]="['/profile']" mat-raised-button fxFlex="100" fxShow.gt-xs="false"> Profile </button>
-        <button [routerLink]="['/offer']" mat-raised-button fxFlex="100" fxShow.gt-xs="false" color="primary"> Contact
-        </button>
     </mat-card>
 </div>
 
