@@ -1,8 +1,5 @@
 {
     "welcome": "Willkommen",
-    "welcome-paragraph": "Willkommen auf meiner persönlichen Website.",
-    "welcome-purpose-paragraph": "Dieser Webauftritt dient dazu laufende Projekte zu präsentieren und über die hier zu Verfügung gestellten Applications zu informieren.",
-    "home-projects-paragraph": " TODO",
 
     "projects": "Projekte",
 
@@ -17,5 +14,8 @@
     "software-developer": "Softwareentwickler",
     "today": "Heute",
     "hire": "Einstellen",
-    "profile": "Lebenslauf"
+    "profile": "Lebenslauf",
+    "product": "Produkt",
+    "tech-stack": "Tech-Stack",
+    "organization": "Organisation"
 }

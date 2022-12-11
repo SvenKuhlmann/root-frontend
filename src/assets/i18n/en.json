@@ -37,5 +37,8 @@
     "searching": "I like to solve hard problems as long as they derive from technological constraints or computational complexity and not from the messiness of your code base.",
     "contact-me-button": "Contact Me",
     "hire": "Hire",
-    "profile": "Profile"
+    "profile": "Profile",
+    "product": "Product",
+    "tech-stack": "Tech-Stack",
+    "organization": "Collaboration"
 }

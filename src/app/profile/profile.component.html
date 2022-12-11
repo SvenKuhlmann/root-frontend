@@ -5,34 +5,62 @@
 
     <h2>{{ 'cv' | translate }}</h2>
 
-    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
+    <!-- Bullet Point template hides left part on xs view-->
+    <ng-template #BulletPoint let-point="point">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%; margin-top: 0.5rem;">
+            <div class="cv-left" fxShow.xs="false"> {{point.left | translate}} </div>
+            <div [ngClass.gt-xs]="'cv-right'" [ngClass.xs]="'xs-item'"> {{point.right}} </div>
+        </div>
+    </ng-template>
+
+
+    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%;">
         <div [ngClass.gt-xs]="'cv-left header'" [ngClass.xs]="'xs-header'">2022 - {{"today" | translate}}</div>
         <div [ngClass.gt-xs]="'cv-right header'" [ngClass.xs]="'xs-header'">{{ "software-developer" | translate}} </div>
     </div>
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left" fxShow.xs="false"> {{"employer" | translate}} </div>
-        <div [ngClass.gt-xs]="'cv-right'"> Ceyoniq Technology GmbH </div>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'employer', right:'Ceyoniq Technology GmbH'}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'product', right:'Enterprise Content Management System'}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'tech-stack', right:'Java, Spring, Hibernate, Gradle, PostgreSQL, Kubernetes'}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'organization', right:'Agile, Scrum, Continuous Integration'}}">
+    </ng-template>
+
+    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%;  margin-top: 2rem">
+        <div [ngClass.gt-xs]="'cv-left header'" [ngClass.xs]="'xs-header'">2020 - 2022</div>
+        <div [ngClass.gt-xs]="'cv-right header'" [ngClass.xs]="'xs-header'">{{ "software-developer" | translate}} </div>
     </div>
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left" fxShow.xs="false"> {{"tech-stack" | translate}} </div>
-        <div [ngClass.gt-xs]="'cv-right'" [ngClass.xs]="'xs-item'"> Java, Spring, Hibernate, Gradle, PostgreSQL, Kubernetes </div>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'employer', right:' 4ALLPORTAL GmbH '}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'product', right:'Product Information Management System'}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'tech-stack', right:'Java, SpringBoot, Gradle, MySQL, Docker'}}">
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="BulletPoint"
+        [ngTemplateOutletContext]="{point:{left: 'organization', right:'GitFlow'}}">
+    </ng-template>
+
+    <div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%;  margin-top: 2rem" >
+        <div [ngClass.gt-xs]="'cv-left header'" [ngClass.xs]="'xs-header'">2018 - 2020</div>
+        <div [ngClass.gt-xs]="'cv-right header'" [ngClass.xs]="'xs-header'">Master of Science: {{"computer-science" | translate}}</div>
     </div>
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left header">2020 - 2022</div>
-        <div class="cv-right header"> {{ "software-developer" | translate}}</div>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" style="width: 100%; margin-top:  0.5rem">
+        <div class="cv-left" fxShow.xs="false"> {{"university" | translate}} </div>
+        <div [ngClass.gt-xs]="'cv-right'" [ngClass.xs]="'xs-item'"> {{ "uni-paderborn" | translate}} </div>
     </div>
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left"> {{"employer" | translate}} </div>
-        <div class="cv-right"> 4ALLPORTAL GmbH </div>
-    </div>
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left header">2018 - 2020</div>
-        <div class="cv-right header"> Master of Science: {{"computer-science" | translate}} </div>
-    </div>
-    <div div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
-        <div class="cv-left"> {{"university" | translate}} </div>
-        <div class="cv-right"> {{ "uni-paderborn" | translate}} </div>
-    </div>
+
+</div>
+
+<!--
 
     <h2> Technologies </h2>
     This section contains a non-exhaustive list of technologies I use frequently and enjoy working with.
@@ -66,8 +94,7 @@
     <div> "{{"free-bob-cite" | translate}}" </div>
     <div style="font-size: 0.8em" fxLayout="column" fxLayoutAlign="space-around center"> {{"free-bob-cite-mark" |
         translate}} </div>
-</div>
-
+-->
 <!--div style="margin: 1em; clear:right">
 
     It is worth putting an effort in reducing the workload for fellow developers.
